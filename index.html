@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>The Dojo</title>
+</head>
+<body class="grey darken-3">
+  <div id="nav" class="nav z-depth-0">
+    <div class="section center">
+      <h3 class="white-text center">- The Dojo -</h3>
+    </div>
+  </div>
+
+  <div class="section center">
+    <p class="grey-text flow-text">Fitness Tracker
+    </p>
+  </div>
+
+  <div class="container section">
+    <div class="row">
+      <!-- left -->
+      <div id="buttons" class="col s12 l6">
+        <button class="button active" data-activity="cycling">Cycling</button>
+        <button class="button" data-activity="running">Running</button>
+        <button class="button" data-activity="swimming">Swimming</button>
+        <button class="button" data-activity="walking">Walking</button>
+      </div>
+      <!-- right -->
+      <div class="col s12 l6">
+        <div class="canvas"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <form class="col m6 push-m3" action="submit">
+        <div class="input-field flow-text grey-text center">
+          <p>
+            How much <span id="form-activity" class="emphasis">cycling</span> have you done today?</div>
+          </p>
+          <input type="text" class="grey-text" id="cycling" placeholder="Distance in meters">
+          <p class="center pink-text error text-lighten-1"></p>
+      </form>
+    </div>
+  </div>
+</body>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDNj3echeUEQP-Pezl2y2tsLERFHJtgD_Q",
+      authDomain: "d3-firebase-testing.firebaseapp.com",
+      databaseURL: "https://d3-firebase-testing.firebaseio.com",
+      projectId: "d3-firebase-testing",
+      storageBucket: "d3-firebase-testing.appspot.com",
+      messagingSenderId: "356379319260",
+      appId: "1:356379319260:web:c92e6ba6c9656da7eb0d19"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- D3 link -->
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <!-- D3 tooltip plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  
+
+  <script src="graph.js"></script>
+  <script src="ui.js"></script>
+  <script src="index.js"></script>
+  
+</body>
+</html>
